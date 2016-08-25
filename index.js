@@ -9,7 +9,7 @@ var express = require('express');
 var request = require('superagent');
 var bodyParser = require('body-parser');
 
-var pageToken = 'EAAMzZCRs54tYBACQMcYQIHVpFqzvN9RQWYXUCusYWAKZARtDrq6E458je5hBEh5PtZAK8dZBjINwfsrA4ZAbxtWFzBRTd2TB3UFZAm3qUFuoqsUJlGm6R6H50pW63XDop4jJEzABjt1420ZB43vS9ugpS3YfnZByW2wikUEuVkzlMQZDZD';
+var pageToken = 'EAAMzZCRs54tYBAN0kR2EutB5rGhfNZCYHJVCwTmmc8LAa6FjTnX1DgI55c42eQ1UjvocTvANJ4lnXLhRb1rz9GWKZCz2Gl582DGxTUE6r9R1JJla36WCo0VKqUsul4dH4ixVfhXcO0yhaU12uc9ZB8g95zZBvt4D17OnSUGKsMQZDZD';
 var verifyToken = 'chatbot';
 
 var app = express();
