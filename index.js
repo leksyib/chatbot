@@ -57,6 +57,8 @@ app.post('/webhook', function(req, res) {
                 sendGenericMessage(sender);
             }else if (text.toLowerCase() === 'image') {
                 sendImageMessage(sender);
+            }else if (text.toLowerCase() === 'audio') {
+                sendAudioMessage(sender);
             } else {
                 sendTextMessage(sender, 'Text received, echo: ' + text);
             }
@@ -93,11 +95,18 @@ function sendTypingOnMessage(sender){
     });
 }
 
+function sendAudioMessage (sender) {
+     sendMessage(sender, {
+        attachment:{
+          type:"audio",
+          payload:{
+            "url":"http://ol1.mp3party.net/online/51/51711.mp3"
+          }
+        }
+    });
+}
+
 function sendImageMessage (sender) {
-    /*sendMessage(sender, {
-        text: 'sorry something is wrong'
-    });*/
-    
      sendMessage(sender, {
         attachment:{
           type:"image",
@@ -105,7 +114,6 @@ function sendImageMessage (sender) {
             "url":"http://messengerdemo.parseapp.com/img/rift.png"
           }
         }
-          
     });
 }
 
