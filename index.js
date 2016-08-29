@@ -63,7 +63,9 @@ app.post('/webhook', function(req, res) {
                 sendVideoMessage(sender);
             }else if (text.toLowerCase() === 'file') {
                 sendFileoMessage(sender);
-            }else if (text.toLowerCase() === 'typing') {
+            }else if (text.toLowerCase() === 'typingon') {
+                sendTypingOffMessage(sender);
+            }else if (text.toLowerCase() === 'typingoff') {
                 sendTypingOnMessage(sender);
             } else {
                 sendTextMessage(sender, 'Text received, echo: ' + text);
@@ -112,11 +114,27 @@ function sendTypingOnMessage(sender){
                 console.log('Error: ', res.body.error);
             }
         });
-    
-    /*sendMessage(sender, {
-        sender_action:"typing_on"
-    });*/
 }
+function sendTypingOffMessage(sender){
+    request
+        .post('https://graph.facebook.com/v2.6/me/messages')
+        .query({access_token: pageToken})
+        .send({
+            recipient: {
+                id: sender
+            },
+            sender_action:"typing_off"
+        })
+        .end(function (err, res) {
+            if (err) {
+                console.log('Error sending message: ', err);
+            } else if (res.body.error) {
+                console.log('Error: ', res.body.error);
+            }
+        });
+    
+}
+
 
 function sendVideoMessage( sender ){
     sendMessage(sender, {
@@ -134,7 +152,7 @@ function sendFileMessage (sender) {
         attachment:{
           type:"file",
           payload:{
-            url:"http://ol1.mp3party.net/online/51/51711.mp3"
+            url:"https://psv4.vk.me/c612720/u2241572/docs/0e094ddebdb8/fce_speaking.pdf?extra=1cVNMLP_HLy6BBx3Hy5rMDJ4Rndky0vK4cIwvjXqdPYa1r1JFQFXiGkxrwyj4C_fa74MmrKut8XHqoWfNsqpLn3DFw04Sm1aX6V-63mnXvfix5E09g"
           }
         }
     });
