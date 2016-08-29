@@ -68,22 +68,14 @@ app.post('/webhook', function(req, res) {
 
 function sendImageMessage (sender) {
      sendMessage(sender, {
-        "recipient":{
-            "id":"PAGE_ID"
-          },
-          "timestamp":1458692752478,
-          "message":{
-            "mid":"mid.1458696618141:b4ef9d19ec21086067",
-            "seq":51,
-            "attachments":[
-              {
-                "type":"image",
-                "payload":{
-                  "url":"http://messengerdemo.parseapp.com/img/rift.png"
-                }
-              }
-            ]
+        attachment:{
+            type:"template",
+            payload:{
+              template_type: 'generic',
+              image_url: 'http://messengerdemo.parseapp.com/img/rift.png',
+            }
           }
+
     });
 }
 
