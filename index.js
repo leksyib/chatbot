@@ -95,8 +95,28 @@ function sendTypingOnMessage(sender){
     });
 }
 
+function sendVideoMessage( sender ){
+    
+    sendMessage(sender, {
+        attachment:{
+          type:"video",
+          payload:{
+            "url":"https://www.youtube.com/embed/kwBJW0HIHZw"
+          }
+        }
+    });
+    
+        /*"attachment":{
+          "type":"video",
+          "payload":{
+            "url":"https://petersapparel.com/bin/clip.mp4"
+          }
+        }*/
+      
+}
+
 function sendAudioMessage (sender) {
-     sendMessage(sender, {
+    sendMessage(sender, {
         attachment:{
           type:"audio",
           payload:{
