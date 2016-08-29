@@ -62,7 +62,7 @@ app.post('/webhook', function(req, res) {
             }else if (text.toLowerCase() === 'video') {
                 sendVideoMessage(sender);
             }else if (text.toLowerCase() === 'file') {
-                sendFileoMessage(sender);
+                //sendFileoMessage(sender);
             }else if (text.toLowerCase() === 'typingon') {
                 sendTypingOnMessage(sender);
             }else if (text.toLowerCase() === 'typingoff') {
