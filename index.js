@@ -71,6 +71,8 @@ app.post('/webhook', function(req, res) {
                 sendButtonMessage(sender);
             }else if (text.toLowerCase() === 'receipt') {
                 sendReceiptMessage(sender);
+            }else if (text.toLowerCase() === 'quickanswers') {
+                sendQuickAnswersMessage(sender);
             } else {
                 sendTextMessage(sender, 'Text received, echo: ' + text);
             }
@@ -99,6 +101,24 @@ function sendMessage (sender, message) {
         });
 }
 
+function sendQuickAnswersMessage(sender){
+     sendMessage(sender, {
+        text:"Pick a color:",
+        quick_replies:[
+          {
+            content_type:"text",
+            title:"Red",
+            payload:"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_RED"
+          },
+          {
+            content_type:"text",
+            title:"Green",
+            payload:"DEVELOPER_DEFINED_PAYLOAD_FOR_PICKING_GREEN"
+          }
+        ]
+    }); 
+    
+}
 
 function sendReceiptMessage(sender){
     
