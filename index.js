@@ -93,15 +93,7 @@ function sendImageMessage (sender) {
     });*/
     
      sendMessage(sender, {
-        attachment:{
-            type:"template",
-            payload:{
-              template_type: 'generic',
-              elements: [{
-                image_url: 'http://messengerdemo.parseapp.com/img/rift.png'
-              }]
-            }
-          }
+        "sender_action":"typing_on"
     });
 }
 
