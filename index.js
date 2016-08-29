@@ -103,7 +103,7 @@ function sendVideoMessage( sender ){
         attachment:{
           type:"video",
           payload:{
-            "url":"https://www.youtube.com/embed/kwBJW0HIHZw"
+            url:"http://24bopt.com/html/option/video/24boption_promo_video.mp4"
           }
         }
     });
@@ -122,7 +122,7 @@ function sendAudioMessage (sender) {
         attachment:{
           type:"audio",
           payload:{
-            "url":"http://ol1.mp3party.net/online/51/51711.mp3"
+            url:"http://ol1.mp3party.net/online/51/51711.mp3"
           }
         }
     });
@@ -133,7 +133,7 @@ function sendImageMessage (sender) {
         attachment:{
           type:"image",
           payload:{
-            "url":"http://messengerdemo.parseapp.com/img/rift.png"
+            url:"http://messengerdemo.parseapp.com/img/rift.png"
           }
         }
     });
