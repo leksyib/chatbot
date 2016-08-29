@@ -67,6 +67,8 @@ app.post('/webhook', function(req, res) {
                 sendTypingOnMessage(sender);
             }else if (text.toLowerCase() === 'typingoff') {
                 sendTypingOffMessage(sender);
+            }else if (text.toLowerCase() === 'button') {
+                sendButtonMessage(sender);
             } else {
                 sendTextMessage(sender, 'Text received, echo: ' + text);
             }
@@ -93,6 +95,31 @@ function sendMessage (sender, message) {
                 console.log('Error: ', res.body.error);
             }
         });
+}
+
+function sendButtonMessage(sender){
+     sendMessage(sender, {
+        attachment:{
+          type:"template",
+          payload:{
+            template_type:"button",
+                text:"What do you want to do next?",
+                buttons:[
+                  {
+                    type:"web_url",
+                    url:"https://petersapparel.parseapp.com",
+                    title:"Show Website"
+                  },
+                  {
+                    type:"postback",
+                    title:"Start Chatting",
+                    payload:"USER_DEFINED_PAYLOAD"
+                  }
+                ]
+          }
+        }
+    }); 
+    
 }
 
 function sendTypingOnMessage(sender){
