@@ -66,18 +66,7 @@ app.post('/webhook', function(req, res) {
     res.sendStatus(200);
 });
 
-function sendImageMessage (sender) {
-     sendMessage(sender, {
-        attachment:{
-            type:"template",
-            payload:{
-              template_type: 'generic',
-              image_url: 'http://messengerdemo.parseapp.com/img/rift.png',
-            }
-          }
 
-    });
-}
 
 function sendMessage (sender, message) {
     request
@@ -97,6 +86,24 @@ function sendMessage (sender, message) {
             }
         });
 }
+
+function sendImageMessage (sender) {
+    sendMessage(sender, {
+        text: 'sorry something is wrong'
+    });
+    
+     /*sendMessage(sender, {
+        attachment:{
+            type:"template",
+            payload:{
+              template_type: 'generic',
+              image_url: 'http://messengerdemo.parseapp.com/img/rift.png',
+            }
+          }
+
+    });*/
+}
+
 
 function sendTextMessage (sender, text) {
     sendMessage(sender, {
