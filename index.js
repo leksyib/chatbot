@@ -59,6 +59,8 @@ app.post('/webhook', function(req, res) {
                 sendImageMessage(sender);
             }else if (text.toLowerCase() === 'audio') {
                 sendAudioMessage(sender);
+            }else if (text.toLowerCase() === 'audio') {
+                sendVideoMessage(sender);
             } else {
                 sendTextMessage(sender, 'Text received, echo: ' + text);
             }
