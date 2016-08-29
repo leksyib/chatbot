@@ -87,13 +87,25 @@ function sendMessage (sender, message) {
         });
 }
 
+function sendTypingOnMessage(sender){
+    sendMessage(sender, {
+        sender_action:"typing_on"
+    });
+}
+
 function sendImageMessage (sender) {
     /*sendMessage(sender, {
         text: 'sorry something is wrong'
     });*/
     
      sendMessage(sender, {
-        "sender_action":"typing_on"
+        attachment:{
+          type:"image",
+          payload:{
+            "url":"http://messengerdemo.parseapp.com/img/rift.png"
+          }
+        }
+          
     });
 }
 
