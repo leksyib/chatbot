@@ -150,7 +150,7 @@ function sendFileMessage (sender) {
         attachment:{
           type:"file",
           payload:{
-            url:"https://psv4.vk.me/c612720/u2241572/docs/0e094ddebdb8/fce_speaking.pdf?extra=1cVNMLP_HLy6BBx3Hy5rMDJ4Rndky0vK4cIwvjXqdPYa1r1JFQFXiGkxrwyj4C_fa74MmrKut8XHqoWfNsqpLn3DFw04Sm1aX6V-63mnXvfix5E09g"
+            url:"https://petersapparel.com/bin/receipt.pdf"
           }
         }
     });
