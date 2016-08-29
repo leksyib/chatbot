@@ -62,11 +62,11 @@ app.post('/webhook', function(req, res) {
             }else if (text.toLowerCase() === 'video') {
                 sendVideoMessage(sender);
             }else if (text.toLowerCase() === 'file') {
-                sendFileoMessage(sender);
+                //sendFileoMessage(sender);
             }else if (text.toLowerCase() === 'typingon') {
-                sendTypingOffMessage(sender);
+                //sendTypingOnMessage(sender);
             }else if (text.toLowerCase() === 'typingoff') {
-                sendTypingOnMessage(sender);
+                //sendTypingOffMessage(sender);
             } else {
                 sendTextMessage(sender, 'Text received, echo: ' + text);
             }
@@ -75,8 +75,6 @@ app.post('/webhook', function(req, res) {
 
     res.sendStatus(200);
 });
-
-
 
 function sendMessage (sender, message) {
     request
@@ -97,7 +95,7 @@ function sendMessage (sender, message) {
         });
 }
 
-function sendTypingOnMessage(sender){
+/*function sendTypingOnMessage(sender){
     request
         .post('https://graph.facebook.com/v2.6/me/messages')
         .query({access_token: pageToken})
@@ -133,7 +131,7 @@ function sendTypingOffMessage(sender){
             }
         });
     
-}
+}*/
 
 
 function sendVideoMessage( sender ){
@@ -147,7 +145,7 @@ function sendVideoMessage( sender ){
     });      
 }
  
-function sendFileMessage (sender) {
+/*function sendFileMessage (sender) {
     sendMessage(sender, {
         attachment:{
           type:"file",
@@ -156,7 +154,7 @@ function sendFileMessage (sender) {
           }
         }
     });
-}
+}*/
 
 function sendAudioMessage (sender) {
     sendMessage(sender, {
