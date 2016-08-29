@@ -55,6 +55,8 @@ app.post('/webhook', function(req, res) {
 
             if (text.toLowerCase() === 'generic') {
                 sendGenericMessage(sender);
+            }else if (text.toLowerCase() === 'image') {
+                sendImageMessage(sender);
             } else {
                 sendTextMessage(sender, 'Text received, echo: ' + text);
             }
@@ -63,6 +65,27 @@ app.post('/webhook', function(req, res) {
 
     res.sendStatus(200);
 });
+
+function sendImageMessage (sender) {
+     sendMessage(sender, {
+        "recipient":{
+            "id":"PAGE_ID"
+          },
+          "timestamp":1458692752478,
+          "message":{
+            "mid":"mid.1458696618141:b4ef9d19ec21086067",
+            "seq":51,
+            "attachments":[
+              {
+                "type":"image",
+                "payload":{
+                  "url":"http://messengerdemo.parseapp.com/img/rift.png"
+                }
+              }
+            ]
+          }
+    });
+}
 
 function sendMessage (sender, message) {
     request
