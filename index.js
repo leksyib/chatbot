@@ -88,20 +88,21 @@ function sendMessage (sender, message) {
 }
 
 function sendImageMessage (sender) {
-    sendMessage(sender, {
+    /*sendMessage(sender, {
         text: 'sorry something is wrong'
-    });
+    });*/
     
-     /*sendMessage(sender, {
+     sendMessage(sender, {
         attachment:{
             type:"template",
             payload:{
               template_type: 'generic',
-              image_url: 'http://messengerdemo.parseapp.com/img/rift.png',
+              elements: [{
+                image_url: 'http://messengerdemo.parseapp.com/img/rift.png'
+              }]
             }
           }
-
-    });*/
+    });
 }
 
 
