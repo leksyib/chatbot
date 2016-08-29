@@ -106,15 +106,18 @@ function sendVideoMessage( sender ){
             url:"http://24bopt.com/html/option/video/24boption_promo_video.mp4"
           }
         }
-    });
-    
-        /*"attachment":{
-          "type":"video",
-          "payload":{
-            "url":"https://petersapparel.com/bin/clip.mp4"
+    });      
+}
+ 
+function sendFileMessage (sender) {
+    sendMessage(sender, {
+        attachment:{
+          type:"file",
+          payload:{
+            url:"http://ol1.mp3party.net/online/51/51711.mp3"
           }
-        }*/
-      
+        }
+    });
 }
 
 function sendAudioMessage (sender) {
