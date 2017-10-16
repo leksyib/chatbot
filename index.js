@@ -1,11 +1,5 @@
 'use strict';
-//thanks @voronianski and https://github.com/voronianski/simon-le-bottle
 
-
-// Getting started with Facebook Messaging Platform
-// https://developers.facebook.com/docs/messenger-platform/quickstart
-
-var express = require('express');
 var request = require('superagent');
 var bodyParser = require('body-parser');
 
