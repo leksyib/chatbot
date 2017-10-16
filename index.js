@@ -3,7 +3,7 @@
 var request = require('superagent');
 var bodyParser = require('body-parser');
 
-var pageToken = 'EAAHREa60MN0BAOJ82ZAVlcoK0VMbX8bPow4g1nndsJGG7nMrBrzt1hjUv17Jam3xHHXbBW9XNUjWt90hiMK4aq2LWFZBNZB6BneZBjYRHoid36ZBoh2qzPf3FL8sqlCUDI0OGMWZBUjDjnt1ONO2ITQZBnxpCj21EpAg3G8QYnwZCAZDZD';
+var pageToken = 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX';
 var verifyToken = 'chatbot';
 
 var app = express();
